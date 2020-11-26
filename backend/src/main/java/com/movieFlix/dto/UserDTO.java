@@ -2,27 +2,31 @@ package com.movieFlix.dto;
 
 import java.io.Serializable;
 
-import com.movieFlix.entities.Genre;
+import com.movieFlix.entities.User;
 
-public class GenreDTO implements Serializable {
+public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
+	private String email;
 	
-	public GenreDTO() {
+	public UserDTO() {
 		
 	}
-	
-	public GenreDTO(Long id, String name) {
+
+	public UserDTO(Long id, String name, String email) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.email = email;
 	}
 	
-	public GenreDTO(Genre entity) {
+	public UserDTO(User entity) {
+		super();
 		id = entity.getId();
 		name = entity.getName();
+		email = entity.getEmail();
 	}
 
 	public Long getId() {
@@ -40,5 +44,14 @@ public class GenreDTO implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 
 }

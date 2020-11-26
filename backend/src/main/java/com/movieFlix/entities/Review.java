@@ -2,6 +2,7 @@ package com.movieFlix.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_review")
@@ -18,6 +20,9 @@ public class Review implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(columnDefinition = "TEXT")
+	@NotBlank(message = "Esse campo deve ser preenchido")
 	private String text;
 	
 	@ManyToOne
