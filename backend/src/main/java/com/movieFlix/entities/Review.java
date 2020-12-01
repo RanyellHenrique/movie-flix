@@ -10,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "tb_review")
@@ -22,7 +21,6 @@ public class Review implements Serializable {
 	private Long id;
 	
 	@Column(columnDefinition = "TEXT")
-	@NotBlank(message = "Esse campo deve ser preenchido")
 	private String text;
 	
 	@ManyToOne

@@ -24,7 +24,7 @@ public class MovieResource {
 	public ResponseEntity<Page<MovieDTO>> findPaged(
 			@RequestParam(value = "genreId", defaultValue = "0") Long genreId,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
-			@RequestParam(value = "size", defaultValue = "3") Integer size 
+			@RequestParam(value = "size", defaultValue = "10") Integer size 
 			){
 		PageRequest pageRequest = PageRequest.of(page, size);
 		Page<MovieDTO> list = service.findMoviesByGenre(genreId, pageRequest);
