@@ -4,7 +4,7 @@
 
 .home-content {
     display: flex;
-    align-items: center;
+    
     justify-content: center;
 }
 
@@ -39,7 +39,7 @@
     background: #6C6C6C;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px; 
-    padding: 95px 51px 181px 51px;
+    padding: 95px 51px 150px 51px;
     width: 551px;
 }
 
@@ -63,6 +63,8 @@
 .home-input {
     height: 50px !important;
     border-radius: 10px !important;
+
+
 }
 
 .btn-home { 
@@ -73,7 +75,7 @@
 }
 
 .home-input-password {
-    margin-bottom: 150px;
+    margin-bottom: 130px;
 }
 
 .btn-home-content {
@@ -84,4 +86,12 @@
     align-items: center;
     justify-content: center;
     color: #FFF;
+}
+
+.invalid-input {
+    color: #FFC700;
+    margin-left: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
 }
