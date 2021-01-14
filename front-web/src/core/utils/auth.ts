@@ -1,4 +1,5 @@
 import jwtDecode from "jwt-decode";
+import history from "./history";
 import { Role } from "./types";
 
 export const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ?? 'movieflix';
@@ -43,7 +44,12 @@ export const isTokenValid = () => {
 
 export const isAuthenticated = () => {
     const sessionData = getSessionData();
-    return sessionData.access_token && isTokenValid();
-}  
+    return (sessionData.access_token && isTokenValid()) as boolean;
+} 
+
+export const logout = () => {
+    localStorage.removeItem('authData');
+    history.replace('/');
+}
 
 
