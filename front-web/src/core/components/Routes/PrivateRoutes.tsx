@@ -9,7 +9,6 @@ type Props = {
 function PrivateRoute({ children, path }: Props) {
     return (
         <Route
-
             render={({ location }) =>
                 isAuthenticated() ? (
                     children
