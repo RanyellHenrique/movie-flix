@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { logout, isAuthenticated as auth } from '../../utils/auth';
 
 import './styles.scss';
@@ -10,7 +10,7 @@ const Navbar = () => {
 
     useEffect(() => {
         setIsAuthenticated(auth());
-    },[location])
+    }, [location])
 
     const onLogout = () => {
         logout();
@@ -18,9 +18,9 @@ const Navbar = () => {
 
     return (
         <nav className="navbar-container">
-            <h1 className="navbar-title">
+            <Link  to="/movies" className="navbar-title">
                 MovieFlix
-          </h1>
+            </Link>
             {isAuthenticated &&
                 <button
                     className="btn navbar-button"

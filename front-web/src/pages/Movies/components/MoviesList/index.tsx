@@ -65,8 +65,8 @@ const MoviesList = () => {
                 {isLoading ? <div>Loading ...</div>
                     :
                     movies?.content.map(movie =>
-                        <Link to={`/movies/${movie.id}`}>
-                            <CardMovie movie={movie} key={movie.id} />
+                        <Link to={`/movies/${movie.id}`} key={movie.id}>
+                            <CardMovie movie={movie}  />
                         </Link>
 
                     )

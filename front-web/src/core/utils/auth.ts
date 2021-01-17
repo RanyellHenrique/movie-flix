@@ -45,11 +45,15 @@ export const isTokenValid = () => {
 export const isAuthenticated = () => {
     const sessionData = getSessionData();
     return (sessionData.access_token && isTokenValid()) as boolean;
-} 
+}
 
 export const logout = () => {
     localStorage.removeItem('authData');
     history.replace('/');
+}
+
+export const isMember = () => {
+   return getAccessTokenDecoded().authorities.includes('ROLE_MEMBER'); 
 }
 
 
