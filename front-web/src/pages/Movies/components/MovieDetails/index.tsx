@@ -67,9 +67,15 @@ const MovieDetails = () => {
                                 rows={3}
                                 placeholder="Deixe sua avaliação aqui"
                                 name="text"
-                                ref={register({ required: true, validate: (value) => { return !!value.trim() } })}
+                                ref={register({
+                                    required: true,
+                                    validate: (value) => { return !!value.trim() }
+                                })}
+                                disabled={!isMember()}
                             />
-                            {errors.text && <div className="invalid-input d-block">Campo inválido</div>}
+                            {
+                                errors.text && <div className="invalid-input d-block">Campo inválido</div>
+                            }
                             <button
                                 className="movie-details-save-review-btn btn btn-primary"
                                 disabled={!isMember()}
