@@ -34,38 +34,39 @@ const MoviesList = () => {
     useEffect(() => {
         setIsLoadingGenre(true);
         makePrivateRequest({ url: '/genres' })
-            .then(res => SetGenres(res.data))
+            .then(res => SetGenres(res.data.concat({ name: 'Todos', id: 0 })))
             .catch(err => console.log(err))
             .finally(() => setIsLoadingGenre(false));
     }, []);
 
     const handleGenre = (genre: any) => {
         setGenre(genre.id);
+        setActivePage(0);
     }
 
     return (
         <div className="movies-container">
+            <div className="movies-header">
+                <Select
+                    options={genres}
+                    onChange={handleGenre}
+                    classNamePrefix="movies-header-selected"
+                    isLoading={isLoadingGenre}
+                    getOptionLabel={(option: Genre) => option.name}
+                    getOptionValue={(option: Genre) => String(option.id)}
+                    theme={theme => ({
+                        ...theme,
+                        borderRadius: 0,
+                        colors: {
+                            ...theme.colors,
+                            primary25: 'rgba(255, 199, 0, 0.2)',
+                            primary: '#FFC700',
+                        }
+                    })}
+                />
+            </div>
             {isLoading ? <div>Loading ...</div> :
                 <>
-                    <div className="movies-header">
-                        <Select
-                            options={genres}
-                            onChange={handleGenre}
-                            classNamePrefix="movies-header-selected"
-                            isLoading={isLoadingGenre}
-                            getOptionLabel={(option: Genre) => option.name}
-                            getOptionValue={(option: Genre) => String(option.id)}
-                            theme={theme => ({
-                                ...theme,
-                                borderRadius: 0,
-                                colors: {
-                                    ...theme.colors,
-                                    primary25: 'rgba(255, 199, 0, 0.2)',
-                                    primary: '#FFC700',
-                                }
-                            })}
-                        />
-                    </div>
                     <div className="movies-list-content">
                         {
                             movies?.content.map(movie =>

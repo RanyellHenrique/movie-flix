@@ -63,8 +63,6 @@
 .home-input {
     height: 50px !important;
     border-radius: 10px !important;
-
-
 }
 
 .btn-home { 
@@ -77,8 +75,24 @@
     align-items: center;
 }
 
-.home-input-password {
+.home-input-password-content {
     margin-bottom: 130px;
+}
+
+.home-input-password {
+    height: 70px;
+    height: 50px !important;
+    border-radius: 10px 0px 0px 10px !important;
+    border: 0px !important;
+}
+
+.home-input-password-btn {
+    background-color: #FFF;
+    border-radius: 0px 10px 10px 0px !important;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
 }
 
 .btn-home-content {
