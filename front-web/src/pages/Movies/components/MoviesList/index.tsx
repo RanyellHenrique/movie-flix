@@ -49,11 +49,13 @@ const MoviesList = () => {
             <div className="movies-header">
                 <Select
                     options={genres}
-                    onChange={handleGenre}
+                    name="genres"
                     classNamePrefix="movies-header-selected"
                     isLoading={isLoadingGenre}
                     getOptionLabel={(option: Genre) => option.name}
                     getOptionValue={(option: Genre) => String(option.id)}
+                    inputId="genres"
+                    onChange={value => handleGenre(value)}
                     theme={theme => ({
                         ...theme,
                         borderRadius: 0,
@@ -65,7 +67,13 @@ const MoviesList = () => {
                     })}
                 />
             </div>
-            {isLoading ? <div>Loading ...</div> :
+            {isLoading ?
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border btn-home-spinner" role="status">
+                        <span className="sr-only ">Loading...</span>
+                    </div>
+                </div>
+                :
                 <>
                     <div className="movies-list-content">
                         {

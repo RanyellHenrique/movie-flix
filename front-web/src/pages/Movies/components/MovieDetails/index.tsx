@@ -55,7 +55,7 @@ const MovieDetails = () => {
     return (
         <div className="movie-details-container">
             <div className="movie-details-content">
-                {(!isLoading && movie) &&
+                {(!isLoading && movie) ?
                     <>
                         <MovieCard movie={movie} />
                         <form
@@ -87,6 +87,12 @@ const MovieDetails = () => {
                             {movie?.reviews?.map(review => <ReviewCard review={review} key={review.id} />)}
                         </div>
                     </>
+                    :
+                    <div className="d-flex justify-content-center">
+                        <div className="spinner-border btn-home-spinner" role="status">
+                            <span className="sr-only ">Loading...</span>
+                        </div>
+                    </div>
                 }
             </div>
         </div>
