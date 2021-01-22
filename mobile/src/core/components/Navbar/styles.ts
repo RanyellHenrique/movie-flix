@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFC700',
         height: 50,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        elevation: 5
     },
     title: {
         fontStyle: 'normal',
