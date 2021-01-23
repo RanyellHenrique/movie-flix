@@ -14,7 +14,6 @@ const Routes: React.FC = () => {
                     backgroundColor: '#525252'
                 }
             }}
-
         >
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Login" component={Login} />

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
                 />
                 <Text style={styles.title}>Avalie filmes</Text>
                 <Text style={styles.subTitle}>Diga o que você achou do seu {'\n'} filme favorito</Text>
-                <ButtonIcon  action={() => navigation.navigate('Login')}/>
+                <ButtonIcon action={() => navigation.navigate('Login')} />
             </View>
         </>
     );
