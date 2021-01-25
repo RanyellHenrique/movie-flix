@@ -8,11 +8,10 @@ type Props = {
     movies: Movie[];
     loadingPage: () => void;
     listHeaderComponent: JSX.Element | null;
-    listFooterComponent: JSX.Element | null;
 }
 
 
-const MoviesList: React.FC<Props> = ({ movies, loadingPage, listHeaderComponent, listFooterComponent }) => {
+const MoviesList: React.FC<Props> = ({ movies, loadingPage, listHeaderComponent}) => {
     return (
         <FlatList
             style={styles.container}
@@ -22,7 +21,6 @@ const MoviesList: React.FC<Props> = ({ movies, loadingPage, listHeaderComponent,
             onEndReached={loadingPage}
             onEndReachedThreshold={0.1}
             ListHeaderComponent={listHeaderComponent}
-            ListFooterComponent={listFooterComponent}
         />
     );
 }
