@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 import { Navbar } from '../../core/components';
 import { makePrivateRequest } from '../../core/utils/requests';
 import { Genre, MovieResponse } from '../../core/utils/types';
 import MoviesList from './components/MoviesList';
 import GenreFilter from './components/GenreFilter';
+import styles from './styles';
 
 export type PropsParams = {
     genreId?: number;
@@ -21,7 +22,7 @@ const Movies: React.FC = () => {
     const getMovies = useCallback(() => {
         const moviesData = movies?.content ?? [];
         const params = {
-            size: 2,
+            size: 8,
             genreId: genre?.id,
             page: activePage
         };
@@ -77,7 +78,9 @@ const Movies: React.FC = () => {
                         />
                     }
                 />
-                : <ActivityIndicator size='large' color="yellow" />
+                : <View style={styles.loadingContainer}>
+                    <ActivityIndicator size='large' color="#FFC700" />
+                </View>
             }
         </>
     );

@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: '2%'
     },
+    loadingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     genresContainer: {
         paddingHorizontal: '5%',
         paddingVertical: '4%',
@@ -68,9 +73,6 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         fontSize: 16,
         lineHeight: 22,
-    },
-    loadingContainer: {
-        marginBottom: '2%'
     }
 });
 
