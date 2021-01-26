@@ -33,7 +33,6 @@ const MovieDetails: React.FC<Props> = ({ route: { params: { id } } }) => {
 
     return (
         <>
-            <Navbar />
             { isLoading ?
                 <View style={styles.loadingContainer}>
                     <ActivityIndicator size="large" color="#FFC700" />

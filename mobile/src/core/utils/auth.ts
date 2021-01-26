@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import jwtDecode from 'jwt-decode';
 
 type LoginResponse = {
     access_token: string;
@@ -36,6 +37,26 @@ export const getSessionData = async () => {
 export const doLogout = async () => {
     try {
         const token = await AsyncStorage.removeItem("authData");
+    } catch (e) {
+        console.warn(e);
+    }
+}
+
+export const getAccessTokenDecoded = async () => {
+    const sessionData = await getSessionData();
+    const tokenDecoded = jwtDecode(sessionData.access_token);
+    return tokenDecoded as AccessToken;
+}
+
+export const isTokenValid = async () => {
+    const { exp } = await getAccessTokenDecoded();
+    return Date.now() <= exp * 1000;
+}
+
+export const isAuthenticated = async () => {
+    try {
+        const token = await AsyncStorage.getItem("authData");
+        return token ? true : false;
     } catch (e) {
         console.warn(e);
     }

@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useState } from 'react';
 import { Text, View, TouchableOpacity, Image, Alert } from "react-native";
 import { TextInput } from 'react-native-gesture-handler';
-import { ButtonIcon, Navbar } from '../../core/components';
+import { ButtonIcon } from '../../core/components';
 import eyesOpened from '../../core/assets/images/eyes-opened.png';
 import eyesClosed from '../../core/assets/images/eyes-closed.png';
 import styles from './styles';
@@ -33,7 +33,6 @@ const Login: React.FC = () => {
 
     return (
         <>
-            <Navbar />
             <View style={styles.container}>
                 <Text style={styles.title}>LOGIN</Text>
                 <TextInput

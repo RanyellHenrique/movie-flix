@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, View } from "react-native";
-import { Navbar } from '../../core/components';
 import { makePrivateRequest } from '../../core/utils/requests';
 import { Genre, MovieResponse } from '../../core/utils/types';
 import MoviesList from './components/MoviesList';
@@ -65,7 +64,6 @@ const Movies: React.FC = () => {
 
     return (
         <>
-            <Navbar />
             {movies?.content ?
                 <MoviesList
                     movies={movies.content}

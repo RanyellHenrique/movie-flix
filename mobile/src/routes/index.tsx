@@ -1,6 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home, Login, MovieDetails, Movies } from '../pages';
+import { HeaderLeft, ButtonLogout } from '../core/components';
+import { Text } from 'react-native';
 
 
 const Stack = createStackNavigator();
@@ -8,8 +10,14 @@ const Stack = createStackNavigator();
 const Routes: React.FC = () => {
     return (
         <Stack.Navigator
-            headerMode="none"
+            
             screenOptions={{
+                headerTitle: "",
+                headerStyle: {
+                    backgroundColor: '#FFC700'
+                },
+                headerLeft: () => <HeaderLeft/>,
+                headerRight: () => <ButtonLogout />,
                 cardStyle: {
                     backgroundColor: '#525252'
                 }
