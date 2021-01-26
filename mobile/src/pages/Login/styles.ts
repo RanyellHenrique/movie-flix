@@ -7,13 +7,12 @@ const styles = StyleSheet.create({
     },
     inputEmail: {
         height: 50,
-        width: '80%',
+        width: '100%',
         borderWidth: 1,
         borderColor: '#BFBFBF',
         borderRadius: 10,
         padding: 10,
-        backgroundColor: '#FFF',
-        marginBottom: 30
+        backgroundColor: '#FFF'
     },
     title: {
         color: '#FFF',
@@ -26,12 +25,10 @@ const styles = StyleSheet.create({
     inputPasswordContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        width: '80%',
+        width: '100%',
         borderWidth: 1,
         borderColor: '#BFBFBF',
-        borderRadius: 11,
-        marginBottom: 35
-
+        borderRadius: 11
     },
     inputPassword: {
         height: 50,
@@ -49,6 +46,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,
+    },
+    textError: {
+        color: '#FFC700',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 22,
+        textAlign: 'center'
+    },
+    inputContainer: {
+        marginBottom: '10%',
+        width: '80%'
     }
 });
 

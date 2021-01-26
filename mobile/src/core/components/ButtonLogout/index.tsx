@@ -22,7 +22,7 @@ const ButtonLogout: React.FC = () => {
     
     useEffect(() => {
         logged();
-    }, [authenticated, route]);
+    }, [authenticated, route, isAuthenticated]);
 
     return(
         <>

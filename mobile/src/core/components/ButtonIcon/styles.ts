@@ -28,6 +28,11 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         lineHeight: 22
+    },
+    loadingBtnContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     }
 });
 

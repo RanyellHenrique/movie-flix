@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         lineHeight: 22,
         textAlign: 'justify',
     },
-    cardReviews: {
+    card: {
         marginHorizontal: '3%',
         backgroundColor: '#6C6C6C',
         borderRadius: 20,
@@ -94,7 +94,54 @@ const styles = StyleSheet.create({
         marginLeft: '2%'
     },
     reviewContainer: {
-      marginTop: '5%'  
+        marginTop: '5%'
+    },
+    saveReviewBtn: {
+        backgroundColor: '#FFC700',
+        borderRadius: 10,
+        paddingVertical: '5%',
+        alignItems: 'center'
+    },
+    saveReviewBtnDisable: {
+        backgroundColor: '#B5B5B5',
+        borderRadius: 10,
+        paddingVertical: '5%',
+        alignItems: 'center'
+    },
+    saveReviewBtnText: {
+        color: '#000',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 22,
+    },
+    saveReviewBtnTextDisable: {
+        color: '#888888',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 22,
+    },
+    inputReview: {
+        backgroundColor: '#FFF',
+        borderRadius: 10,
+        padding: '3%',
+        marginBottom: '3%',
+        height: 90,
+        textAlignVertical: "top",
+        fontSize: 16,
+        lineHeight: 22
+    },
+    loadingSaveReviewContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    textError: {
+        color: '#FFC700',
+        fontWeight: 'bold',
+        fontSize: 16,
+        lineHeight: 22,
+        textAlign: 'center',
+        marginBottom: '3%'
     }
 });
 

@@ -10,7 +10,7 @@ type LoginResponse = {
     userId: number;
 }
 
-export type Role = 'ROLE_OPERATOR' | 'ROLE_ADMIN';
+export type Role = 'ROLE_MEMBER' | 'ROLE_VISITOR';
 
 type AccessToken = {
     exp: number;
@@ -60,5 +60,10 @@ export const isAuthenticated = async () => {
     } catch (e) {
         console.warn(e);
     }
+}
+
+export const isMember = async () => {
+    const tokenDecoded = await getAccessTokenDecoded();
+    return tokenDecoded.authorities.includes('ROLE_MEMBER') as boolean; 
 }
 
