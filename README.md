@@ -20,6 +20,10 @@ A aplicação consiste em um banco de filmes, os quais podem ser listados e aval
   <img src="https://github.com/RanyellHenrique/assets/blob/main/MovieFlix/movies-mob.jpeg" width="350" alt="mobMovies">
   <img src="https://github.com/RanyellHenrique/assets/blob/main/MovieFlix/movie-details-mob.jpeg" width="350" alt="mobMovieDetails">
 </div>
+<div align="center" >
+  <img src="https://github.com/RanyellHenrique/assets/blob/main/MovieFlix/movies-mob2.jpeg" width="350" alt="mobMovies">
+  <img src="https://github.com/RanyellHenrique/assets/blob/main/MovieFlix/movie-details-mob2.jpeg" width="350" alt="mobMovieDetails" align="top">
+</div>
 
 ## Layout web
 ![webHome](https://github.com/RanyellHenrique/assets/blob/main/MovieFlix/home-web.png) 
