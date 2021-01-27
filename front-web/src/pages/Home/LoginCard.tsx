@@ -76,12 +76,16 @@ const LoginCard = () => {
             </div>
             <div className="d-flex">
                 <button className="btn-home btn btn-warning">
-                    <h5 className="btn-home-text">LOGAR</h5>
-                    {isLoading && (
-                        <div className="spinner-border btn-home-spinner" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </div>
-                    )}
+
+                    {isLoading ?
+                        <>
+                            <h5 className="btn-home-text">LOADING...</h5>
+                            <div className="spinner-border btn-home-spinner" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </div>
+                        </>
+                        : <h5 className="btn-home-text">LOGAR</h5>
+                    }
                 </button>
                 <div className="btn-home-content">
                     <Arrow />

@@ -19,6 +19,7 @@
     line-height: 22px;
     letter-spacing: -0.015em;  
     color: #9E9E9E;
+    resize: none;
 }
 
 .movie-details-save-review-btn {
@@ -39,6 +40,11 @@
     letter-spacing: -0.015em;
     color: #000000;
     margin: 0px !important;
+}
+
+.movie-details-save-review-btn-loading {
+    justify-content: center;
+    align-items: center;
 }
 
 .movie-details-reviews-list-content {

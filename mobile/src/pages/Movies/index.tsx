@@ -43,6 +43,7 @@ const Movies: React.FC = () => {
                 totalPages: movies?.totalPages ?? 0
             });
             setGenre(genreFilter);
+            setIsLoading(true);
             setActivePage(0);
         }
     }
@@ -64,7 +65,7 @@ const Movies: React.FC = () => {
 
     return (
         <>
-            {movies?.content ?
+            {!isLoading && movies ?
                 <MoviesList
                     movies={movies.content}
                     loadingPage={loadingPage}

@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '80%'
     },
-    button: {
+    content: {
         height: 50,
         backgroundColor: '#FFC700',
         justifyContent: 'center',

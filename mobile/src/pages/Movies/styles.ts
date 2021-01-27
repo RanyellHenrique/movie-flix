@@ -4,7 +4,7 @@ const deviceWidth = Dimensions.get('window').width;
 const deviceHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    container :{
+    container: {
         flex: 1,
         padding: '2%'
     },
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         width: '90%',
-        marginVertical: "40%",
+        marginVertical: "50%",
         backgroundColor: '#525252',
         borderRadius: 20,
         padding: 20,
@@ -73,6 +73,14 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         fontSize: 16,
         lineHeight: 22,
+    },
+
+    modalActive: {
+        width: "100%",
+        backgroundColor: '#FFC700',
+        padding: 10,
+        marginVertical: 5,
+        borderRadius: 5,
     }
 });
 

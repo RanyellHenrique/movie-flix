@@ -11,9 +11,9 @@ type Props = {
 }
 
 
-const GenreFilter:React.FC<Props> = ({genres, genre, handleGenre}) => {
+const GenreFilter: React.FC<Props> = ({ genres, genre, handleGenre }) => {
     const [showGenres, setShowGenres] = useState(false);
-    
+
     return (
         <View>
             <View style={styles.genresContainer}>
@@ -34,17 +34,17 @@ const GenreFilter:React.FC<Props> = ({genres, genre, handleGenre}) => {
                 <View style={styles.modalContainer}>
                     <ScrollView style={styles.modalContent}>
                         {
-                            genres?.map(genre =>
+                            genres?.map(item =>
                                 <TouchableOpacity
                                     onPress={() => {
                                         setShowGenres(!showGenres);
-                                        handleGenre(genre);
+                                        handleGenre(item);
                                     }}
-                                    style={styles.modalItem}
-                                    key={genre.id}
+                                    style={item == genre ? styles.modalActive : styles.modalItem}
+                                    key={item.id}
                                 >
                                     <Text style={styles.modalItemText}>
-                                        {genre.name}
+                                        {item.name}
                                     </Text>
                                 </TouchableOpacity>
                             )

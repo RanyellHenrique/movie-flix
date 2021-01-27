@@ -10,9 +10,13 @@ type Props = {
 
 const ButtonIcon: React.FC<Props> = ({ action, isLoading }) => {
     return (
-        <View style={styles.container}>
-            <TouchableOpacity style={styles.button} onPress={action}>
-                {isLoading ?
+        <TouchableOpacity
+            style={styles.container}
+            onPress={action}
+        >
+            <View style={styles.content} >
+                {isLoading
+                    ?
                     <View style={styles.loadingBtnContainer}>
                         <Text style={styles.text}>LOADING...</Text>
                         <ActivityIndicator size="small" color="#9A7D0A" />
@@ -21,12 +25,11 @@ const ButtonIcon: React.FC<Props> = ({ action, isLoading }) => {
                     <Text style={styles.text}>FAZER LOGIN</Text>
                 }
 
-            </TouchableOpacity>
+            </View>
             <View style={styles.iconContainer}>
                 <Image source={arrow} />
             </View>
-        </View>
-
+        </TouchableOpacity>
     );
 }
 

@@ -28,6 +28,7 @@ const MovieDetails = () => {
     const [movie, setMovie] = useState<Movie>();
     const [isLoading, setIsLoading] = useState(false);
     const { register, handleSubmit, errors } = useForm<FormState>();
+    const [isLoadingSaveReview, setIsLoadingSaveReview] = useState(false);
 
     const getMovie = useCallback(() => {
         setIsLoading(true);
@@ -43,13 +44,15 @@ const MovieDetails = () => {
     const onSubmit = (data: FormState) => {
         const dataUser = getSessionData();
         data = { ...data, user: { id: dataUser.userId }, movieId: Number(movieId) };
+        setIsLoadingSaveReview(true);
         makePrivateRequest({ method: 'POST', url: '/reviews', data: data })
             .then(() => {
                 history.push(`/movies/${movieId}`);
                 toast.warning('Review salvo com sucesso!');
                 getMovie();
             })
-            .catch(() => toast.error('Erro ao salvar o review!'));
+            .catch(() => toast.error('Erro ao salvar o review!'))
+            .finally(() => setIsLoadingSaveReview(false));
     }
 
     return (
@@ -80,7 +83,17 @@ const MovieDetails = () => {
                                 className="movie-details-save-review-btn btn btn-primary"
                                 disabled={!isMember()}
                             >
-                                <h3 className="movie-details-save-review-btn-text">SALVAR AVALIAÇÂO</h3>
+                                {isLoadingSaveReview
+                                    ?
+                                    <div className="d-flex movie-details-save-review-btn-loading">
+                                        <h3 className="movie-details-save-review-btn-text ">LOADING...</h3>
+                                        <div className="spinner-border btn-home-spinner ml-5" role="status">
+                                            <span className="sr-only ">Loading...</span>
+                                        </div>
+                                    </div>
+
+                                    : <h3 className="movie-details-save-review-btn-text">SALVAR AVALIAÇÂO</h3>
+                                }
                             </button>
                         </form>
                         <div className="movie-details-reviews-list-content">

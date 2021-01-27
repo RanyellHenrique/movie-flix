@@ -15,7 +15,7 @@ export type LoginData = {
     password: string;
 }
 
-const BASE_URL = process.env.REACT_APP_BASE_URL ?? 'https://ranyell-movieflix.herokuapp.com';
+const BASE_URL = process.env.REACT_APP_BASE_URL ?? 'http://localhost:8080';
 
 
 export const makeRequest = ({ method = 'GET', url, data, params, headers }: RequestParams) => {
@@ -34,7 +34,7 @@ export const makeLogin = (data: LoginData) => {
         'Content-Type': 'application/x-www-form-urlencoded'
     }
     const payload = queryString.stringify({ ...data, grant_type: 'password' });
-    return  makeRequest({ url: '/oauth/token', data: payload, method: 'POST', headers });
+    return makeRequest({ url: '/oauth/token', data: payload, method: 'POST', headers });
 }
 
 export const makePrivateRequest = async ({ method = 'GET', url, data, params }: RequestParams) => {
@@ -42,5 +42,5 @@ export const makePrivateRequest = async ({ method = 'GET', url, data, params }: 
     const headers = {
         'Authorization': `Bearer ${sessionData.access_token}`
     }
-    return makeRequest({method, url, data, params, headers});
+    return makeRequest({ method, url, data, params, headers });
 }
