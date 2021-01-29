@@ -75,11 +75,11 @@ const LoginCard = () => {
                 {errors.password && <div className="invalid-input d-block" >Campo obrigatório</div>}
             </div>
             <div className="d-flex">
-                <button className="btn-home btn btn-warning">
+                <button className="btn-home btn btn-warning d-flex">
 
                     {isLoading ?
                         <>
-                            <h5 className="btn-home-text">LOADING...</h5>
+                            <h5 className="btn-home-text mr-5">LOADING...</h5>
                             <div className="spinner-border btn-home-spinner" role="status">
                                 <span className="sr-only">Loading...</span>
                             </div>
@@ -87,7 +87,7 @@ const LoginCard = () => {
                         : <h5 className="btn-home-text">LOGAR</h5>
                     }
                 </button>
-                <div className="btn-home-content">
+                <div className="btn-home-icon">
                     <Arrow />
                 </div>
             </div>

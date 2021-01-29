@@ -70,9 +70,8 @@
     width: 380px;
     border-radius: 10px 0 0 10px !important;
     text-transform: uppercase;
-    display: grid;
-    grid-template-areas:"a text-btn spinner";
     align-items: center;
+    justify-content: center;
 }
 
 .home-input-password-content {
@@ -95,11 +94,11 @@
     }
 }
 
-.btn-home-content {
+.btn-home-icon {
+    display: flex;
     background-color:  #947b23;
     width: 70px;
     border-radius: 0 10px 10px 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     color: #FFF;
@@ -115,11 +114,14 @@
 
 .btn-home-spinner {
     color: #947b23;
-    grid-area: spinner;
     justify-self: end;
 }
 
 .btn-home-text {
-    grid-area: text-btn;
-    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #000000;
 }
